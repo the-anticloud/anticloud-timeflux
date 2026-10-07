@@ -1,0 +1,291 @@
+{
+ "schema": "anticloud.tier-bench/1",
+ "project": "TIMEFLUX",
+ "source": {
+  "repo_path": "E:\\fenta\\Downloads\\The Anticloud\\ANTICLOUD_REPOS\\BRAIN_COMPUTER_INTERFACE\\TIMEFLUX\\UPSTREAM_CLONE",
+  "git": {
+   "head": "REMOVED_CONTAMINATED_SHA_PENDING_API_RESOLVE",
+   "url": "https://github.com/the-anticloud/OPENMRS_CORE.git",
+   "branch": "master",
+   "committed_at": "2026-09-29T11:06:59+04:00",
+   "sha_verified_from": "local clone .git file read (no .git dir in clone)"
+  }
+ },
+ "metrics": {
+  "files_total": 162,
+  "source_files_scanned": 78,
+  "lines_of_code": 8647,
+  "languages": {
+   ".py": 84,
+   ".yaml": 43,
+   ".rst": 12,
+   ".png": 7,
+   "(none)": 3,
+   ".json": 3,
+   ".md": 2,
+   ".cfg": 2,
+   ".toml": 1,
+   ".alt": 1,
+   ".bat": 1,
+   ".sh": 1,
+   ".hdf5": 1,
+   ".ico": 1
+  }
+ },
+ "licence": {
+  "spdx": "MIT",
+  "class": "A",
+  "source_file": "LICENSE",
+  "redistribution_allowed": true
+ },
+ "dependencies": {
+  "count": 0,
+  "unique": 0,
+  "by_ecosystem": {},
+  "list": []
+ },
+ "owasp_top10": {
+  "total_findings": 13,
+  "files_with_findings": 11,
+  "severity": {
+   "high": 2,
+   "medium": 1,
+   "low": 10
+  },
+  "categories": {
+   "A01-BrokenAccessControl": {
+    "count": 0,
+    "findings": []
+   },
+   "A02-CryptographicFailures": {
+    "count": 1,
+    "findings": [
+     {
+      "severity": "medium",
+      "file": "test/helpers/test_bdf.py",
+      "line": 39,
+      "cwe": "CWE-327",
+      "snippet": "md5 = hashlib.md5()"
+     }
+    ]
+   },
+   "A03-Injection": {
+    "count": 2,
+    "findings": [
+     {
+      "severity": "high",
+      "file": "timeflux/nodes/expression.py",
+      "line": 126,
+      "cwe": "CWE-95",
+      "snippet": "self.o.data = pd.eval("
+     },
+     {
+      "severity": "high",
+      "file": "timeflux/core/message.py",
+      "line": 24,
+      "cwe": "CWE-502",
+      "snippet": "return [topic, pickle.loads(data), pickle.loads(meta)]"
+     }
+    ]
+   },
+   "A04-InsecureDesign": {
+    "count": 8,
+    "findings": [
+     {
+      "severity": "low",
+      "file": "timeflux/nodes/apply.py",
+      "line": 38,
+      "cwe": "CWE-",
+      "snippet": ".. todo::"
+     },
+     {
+      "severity": "low",
+      "file": "timeflux/nodes/gate.py",
+      "line": 32,
+      "cwe": "CWE-",
+      "snippet": "Todo: allow for multiple input ports."
+     },
+     {
+      "severity": "low",
+      "file": "timeflux/nodes/ml.py",
+      "line": 86,
+      "cwe": "CWE-",
+      "snippet": "# TODO: validation"
+     },
+     {
+      "severity": "low",
+      "file": "timeflux/nodes/zmq.py",
+      "line": 159,
+      "cwe": "CWE-",
+      "snippet": "# TODO: remove when Last Value Caching is implemented"
+     },
+     {
+      "severity": "low",
+      "file": "timeflux/helpers/handler.py",
+      "line": 13,
+      "cwe": "CWE-",
+      "snippet": "pretty useless in most cases. But do not abandon all hope! Here is a (hacky) solution: have a launcher script"
+     },
+     {
+      "severity": "low",
+      "file": "timeflux/helpers/viz.py",
+      "line": 127,
+      "cwe": "CWE-",
+      "snippet": "# This is still a bit hacky and should be considered as a WIP."
+     },
+     {
+      "severity": "low",
+      "file": "timeflux/core/message.py",
+      "line": 28,
+      "cwe": "CWE-",
+      "snippet": "# TODO: handle meta and cases where data is None"
+     },
+     {
+      "severity": "low",
+      "file": "test/nodes/test_misc.py",
+      "line": 23,
+      "cwe": "CWE-",
+      "snippet": "# TODO: make a generic test for replay"
+     }
+    ]
+   },
+   "A05-SecurityMisconfiguration": {
+    "count": 0,
+    "findings": []
+   },
+   "A06-VulnerableComponents": {
+    "count": 0,
+    "findings": []
+   },
+   "A07-AuthFailures": {
+    "count": 0,
+    "findings": []
+   },
+   "A08-SoftwareDataIntegrity": {
+    "count": 2,
+    "findings": [
+     {
+      "severity": "low",
+      "file": "timeflux/nodes/hdf5.py",
+      "line": 186,
+      "cwe": "CWE-319",
+      "snippet": "see: http://pandas.pydata.org/pandas-docs/stable/io.html#string-columns"
+     },
+     {
+      "severity": "low",
+      "file": "timeflux/nodes/zmq.py",
+      "line": 161,
+      "cwe": "CWE-319",
+      "snippet": "# http://zguide.zeromq.org/page%3aall#Getting-the-Message-Out"
+     }
+    ]
+   },
+   "A09-LoggingMonitoringFailures": {
+    "count": 0,
+    "findings": []
+   },
+   "A10-SSRF": {
+    "count": 0,
+    "findings": []
+   }
+  }
+ },
+ "owasp_llm_top10": {
+  "total_findings": 1,
+  "files_with_findings": 1,
+  "severity": {
+   "high": 0,
+   "medium": 1,
+   "low": 0
+  },
+  "categories": {
+   "LLM01-PromptInjection": {
+    "count": 1,
+    "findings": [
+     {
+      "severity": "medium",
+      "file": "timeflux/core/manager.py",
+      "line": 166,
+      "cwe": "CWE-1336",
+      "snippet": "template = Template(template)"
+     }
+    ]
+   },
+   "LLM02-SensitiveInfoDisclosure": {
+    "count": 0,
+    "findings": []
+   },
+   "LLM03-SupplyChain": {
+    "count": 0,
+    "findings": []
+   },
+   "LLM04-DataPoisoning": {
+    "count": 0,
+    "findings": []
+   },
+   "LLM05-ImproperOutputHandling": {
+    "count": 0,
+    "findings": []
+   },
+   "LLM06-ExcessiveAgency": {
+    "count": 0,
+    "findings": []
+   },
+   "LLM07-SystemPromptLeak": {
+    "count": 0,
+    "findings": []
+   },
+   "LLM08-VectorEmbeddingWeaknesses": {
+    "count": 0,
+    "findings": []
+   },
+   "LLM09-Misinformation": {
+    "count": 0,
+    "findings": []
+   },
+   "LLM10-UnboundedConsumption": {
+    "count": 0,
+    "findings": []
+   }
+  }
+ },
+ "sbom": {
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "serialNumber": "urn:uuid:2bd33748-7a77-5894-bc1c-38863fdd710a",
+  "version": 1,
+  "metadata": {
+   "timestamp": "2026-10-06T09:23:38Z",
+   "component": {
+    "type": "application",
+    "name": "TIMEFLUX",
+    "version": "83b357604d34",
+    "bom-ref": "pkg:generic/anticloud/TIMEFLUX@83b357604d34",
+    "purl": "pkg:generic/anticloud/TIMEFLUX@83b357604d34",
+    "licenses": [
+     {
+      "license": {
+       "id": "MIT"
+      }
+     }
+    ]
+   },
+   "properties": [
+    {
+     "name": "anticloud:source-commit",
+     "value": "REMOVED_CONTAMINATED_SHA_PENDING_API_RESOLVE"
+    },
+    {
+     "name": "anticloud:source-url",
+     "value": "https://github.com/the-anticloud/OPENMRS_CORE.git"
+    },
+    {
+     "name": "anticloud:tier",
+     "value": "tier-agent"
+    }
+   ]
+  },
+  "components": []
+ },
+ "elapsed_seconds": 9.01
+}
